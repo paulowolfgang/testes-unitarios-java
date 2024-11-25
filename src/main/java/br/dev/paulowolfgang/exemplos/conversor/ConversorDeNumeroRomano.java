@@ -6,8 +6,14 @@ package br.dev.paulowolfgang.exemplos.conversor;
  */
 public class ConversorDeNumeroRomano {
     
-    public int converte(String numeroemRomano)
+    public int converte(String numeroEmRomano)
     {
-        return 1;
+        if(numeroEmRomano.equals("I"))
+        {
+            return 1;
+        }else if(numeroEmRomano.equals("V")){
+            return 5;
+        }
+        return 0;
     }
 }
