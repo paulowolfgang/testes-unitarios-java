@@ -17,6 +17,10 @@ public class CalculadoraDeSalario
             
             return funcionario.getSalario() * 0.9;
         } else {
+            if(funcionario.getSalario() > 2500)
+            {
+                return funcionario.getSalario() * 0.75;
+            }
             return funcionario.getSalario() * 0.85;
         }
         
