@@ -33,7 +33,7 @@ public class ConversorDeNumeroRomano {
                 multiplicador = -1;
             }
             
-            acumulador += tabelaSimbolos.get(numeroEmRomano.charAt(i)) * multiplicador;
+            acumulador += atual * multiplicador;
             ultimoVizinhoDaDireita = atual;
         }
         return acumulador;
