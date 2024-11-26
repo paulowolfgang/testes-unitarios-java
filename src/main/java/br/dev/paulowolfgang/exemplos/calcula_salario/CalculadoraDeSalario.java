@@ -8,10 +8,14 @@ public class CalculadoraDeSalario
 {
     public double calculaSalario(Funcionario funcionario)
     {
-        if(funcionario.getSalario() > 3000)
+        if(funcionario.getCargo().equals(Cargo.DESENVOLVEDOR))
         {
-            return 3200.0;
+            if(funcionario.getSalario() > 3000)
+            {
+                return 3200.0;
+            }
+            return 1350.0;
         }
-        return 1350.0;
+        return 850.0;
     }
 }
