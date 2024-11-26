@@ -40,4 +40,12 @@ public class ConversorDeNumeroRomanoTest {
         int numero = romano.converte("II");
         Assertions.assertEquals(2, numero);
     }
+    
+    @Test
+    public void deveEntenderQuatroSimbolosDoisADoisComoXXII()
+    {
+        ConversorDeNumeroRomano romano = new ConversorDeNumeroRomano();
+        int numero = romano.converte("XXII");
+        Assertions.assertEquals(22, numero);
+    }
 }
