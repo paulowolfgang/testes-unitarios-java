@@ -12,10 +12,13 @@ public class CalculadoraDeSalario
         {
             if(funcionario.getSalario() > 3000)
             {
-                return 3200.0;
+                return funcionario.getSalario() * 0.8;
             }
-            return 1350.0;
+            
+            return funcionario.getSalario() * 0.9;
+        } else {
+            return funcionario.getSalario() * 0.85;
         }
-        return 850.0;
+        
     }
 }
