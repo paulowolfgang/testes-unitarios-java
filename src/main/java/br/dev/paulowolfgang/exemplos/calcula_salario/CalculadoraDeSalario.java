@@ -16,13 +16,14 @@ public class CalculadoraDeSalario
             }
             
             return funcionario.getSalario() * 0.9;
-        } else {
+        } else if(funcionario.getCargo().equals(Cargo.DBA)) {
             if(funcionario.getSalario() > 2500)
             {
                 return funcionario.getSalario() * 0.75;
             }
             return funcionario.getSalario() * 0.85;
+        } else {
+            return funcionario.getSalario() * 0.05;
         }
-        
     }
 }
