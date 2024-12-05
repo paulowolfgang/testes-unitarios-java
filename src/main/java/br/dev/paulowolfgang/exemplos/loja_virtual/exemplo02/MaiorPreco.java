@@ -8,6 +8,10 @@ public class MaiorPreco {
     
     public double encontra(CarrinhoDeCompras carrinho)
     {
-        return  0;
+        if(carrinho.getItens().isEmpty())
+        {
+            return 0;
+        }
+        return carrinho.getItens().get(0).getValorTotal();
     }
 }
