@@ -10,11 +10,11 @@ import java.util.List;
  */
 public class CarrinhoDeCompras {
     
-    private List<Item> itens;
+    private final List<Item> itens;
     
     public CarrinhoDeCompras()
     {
-        this.itens = new ArrayList<Item>();
+        this.itens = new ArrayList<>();
     }
     
     public void adiciona(Item item)
@@ -25,5 +25,25 @@ public class CarrinhoDeCompras {
     public List<Item> getItens()
     {
         return Collections.unmodifiableList(itens);
+    }
+    
+    public double maiorValor()
+    {
+        if(itens.isEmpty())
+        {
+            return 0;
+        }
+        
+        double maior = itens.get(0).getValorTotal();
+        
+        for(Item item: itens)
+        {
+            if(maior < item.getValorTotal())
+            {
+                maior = item.getValorTotal();
+            }
+        }
+        
+        return maior;
     }
 }
