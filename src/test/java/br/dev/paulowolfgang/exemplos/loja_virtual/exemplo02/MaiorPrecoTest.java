@@ -33,7 +33,7 @@ public class MaiorPrecoTest {
     }
     
     @Test
-    public void deveRetornarMaiorValorSeCarrinhoConteMuitosElementos()
+    public void deveRetornarMaiorValorSeCarrinhoContemMuitosElementos()
     {
         CarrinhoDeCompras carrinho = new CarrinhoDeCompras();
         carrinho.adiciona(new Item("Geladeira", 1, 900.0));

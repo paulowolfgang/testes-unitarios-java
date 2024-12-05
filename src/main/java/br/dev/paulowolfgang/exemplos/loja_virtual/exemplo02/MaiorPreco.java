@@ -12,6 +12,17 @@ public class MaiorPreco {
         {
             return 0;
         }
-        return carrinho.getItens().get(0).getValorTotal();
+        
+        double maior = carrinho.getItens().get(0).getValorTotal();
+        
+        for(Item item: carrinho.getItens())
+        {
+            if(maior < item.getValorTotal())
+            {
+                maior = item.getValorTotal();
+            }
+        }
+        
+        return maior;
     }
 }
