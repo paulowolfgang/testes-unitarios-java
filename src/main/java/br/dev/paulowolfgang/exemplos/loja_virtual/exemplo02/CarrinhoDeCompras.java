@@ -49,6 +49,21 @@ public class CarrinhoDeCompras {
     
     public double menorValor()
     {
-        return 750.0;
+        if(itens.isEmpty())
+        {
+            return 0;
+        }
+        
+        double menor = itens.get(0).getValorTotal();
+        
+        for(Item item: itens)
+        {
+            if(menor > item.getValorTotal())
+            {
+                menor = item.getValorTotal();
+            }
+        }
+        
+        return menor;
     }
 }
