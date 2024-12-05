@@ -1,4 +1,4 @@
-package br.dev.paulowolfgang.exemplos.loja_virtual;
+package br.dev.paulowolfgang.exemplos.loja_virtual.exemplo01;
 
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.Assertions;

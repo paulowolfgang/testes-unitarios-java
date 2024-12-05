@@ -1,4 +1,6 @@
-package br.dev.paulowolfgang.exemplos.loja_virtual;
+package br.dev.paulowolfgang.exemplos.loja_virtual.exemplo01;
+
+import br.dev.paulowolfgang.exemplos.loja_virtual.exemplo01.CarrinhoDeCompras;
 
 /**
  *

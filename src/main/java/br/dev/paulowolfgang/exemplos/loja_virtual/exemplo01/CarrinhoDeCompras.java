@@ -1,4 +1,4 @@
-package br.dev.paulowolfgang.exemplos.loja_virtual;
+package br.dev.paulowolfgang.exemplos.loja_virtual.exemplo01;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -8,7 +8,7 @@ import java.util.List;
  * @author Paulo Silva
  */
 public class CarrinhoDeCompras {
-
+    
     private final List<Produto> produtos;
 
     public CarrinhoDeCompras() {
