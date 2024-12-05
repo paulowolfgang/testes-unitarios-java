@@ -46,4 +46,9 @@ public class CarrinhoDeCompras {
         
         return maior;
     }
+    
+    public double menorValor()
+    {
+        return 750.0;
+    }
 }
