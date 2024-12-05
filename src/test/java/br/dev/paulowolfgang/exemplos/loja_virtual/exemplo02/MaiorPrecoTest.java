@@ -31,4 +31,18 @@ public class MaiorPrecoTest {
         
         Assertions.assertEquals(900.0, valor);
     }
+    
+    @Test
+    public void deveRetornarMaiorValorSeCarrinhoConteMuitosElementos()
+    {
+        CarrinhoDeCompras carrinho = new CarrinhoDeCompras();
+        carrinho.adiciona(new Item("Geladeira", 1, 900.0));
+        carrinho.adiciona(new Item("Fogão", 1, 1500.0));
+        carrinho.adiciona(new Item("Máquina de Lavar", 1, 750.0));
+        
+        MaiorPreco algoritmo = new MaiorPreco();
+        double valor = algoritmo.encontra(carrinho);
+        
+        Assertions.assertEquals(1500.0, valor);
+    }
 }
