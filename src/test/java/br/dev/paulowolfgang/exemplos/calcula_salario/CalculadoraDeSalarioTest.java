@@ -1,6 +1,7 @@
 package br.dev.paulowolfgang.exemplos.calcula_salario;
 
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Assertions;
 
 /**
@@ -9,10 +10,17 @@ import org.junit.jupiter.api.Assertions;
  */
 public class CalculadoraDeSalarioTest {
     
+    private CalculadoraDeSalario calculadora;
+    
+    @BeforeEach
+    public void inicializa()
+    {
+        this.calculadora = new CalculadoraDeSalario();
+    }
+    
     @Test
     public void deveCalcularSalarioParaDesenvolvedoresComSalarioAbaixoDoLimite()
     {
-        CalculadoraDeSalario calculadora = new CalculadoraDeSalario();
         Funcionario desenvolvedor = new Funcionario("Daniel", 1500.0, Cargo.DESENVOLVEDOR);
         
         double salario = calculadora.calculaSalario(desenvolvedor);
@@ -22,7 +30,6 @@ public class CalculadoraDeSalarioTest {
     @Test
     public void deveCalcularSalarioParaDesenvolvedoresComSalarioAcimaDoLimite()
     {
-        CalculadoraDeSalario calculadora = new CalculadoraDeSalario();
         Funcionario desenvolvedor = new Funcionario("Paulo", 4000.0, Cargo.DESENVOLVEDOR);
         
         double salario = calculadora.calculaSalario(desenvolvedor);
@@ -32,7 +39,6 @@ public class CalculadoraDeSalarioTest {
     @Test
     public void deveCalcularSalarioParaDbasComSalarioAbaixoDoLimite()
     {
-        CalculadoraDeSalario calculadora = new CalculadoraDeSalario();
         Funcionario dba = new Funcionario("José", 1000.0, Cargo.DBA);
         
         double salario = calculadora.calculaSalario(dba);
@@ -42,7 +48,6 @@ public class CalculadoraDeSalarioTest {
     @Test
     public void deveCalcularSalarioParaDbasComSalarioAcimaDoLimite()
     {
-        CalculadoraDeSalario calculadora = new CalculadoraDeSalario();
         Funcionario dba = new Funcionario("Ana", 3000, Cargo.DBA);
         
         double salario = calculadora.calculaSalario(dba);
@@ -52,7 +57,6 @@ public class CalculadoraDeSalarioTest {
     @Test
     public void deveCalcularSalarioParaTestadoresComSalarioAbaixoDoLimite()
     {
-        CalculadoraDeSalario calculadora = new CalculadoraDeSalario();
         Funcionario testador = new Funcionario("Lucia", 800.0, Cargo.TESTADOR);
         
         double salario = calculadora.calculaSalario(testador);
@@ -62,7 +66,6 @@ public class CalculadoraDeSalarioTest {
     @Test
     public void deveCalcularSalarioParaTestadoresComSalarioAcimaDoLimite()
     {
-        CalculadoraDeSalario calculadora = new CalculadoraDeSalario();
         Funcionario testador = new Funcionario("Helena", 3000.0, Cargo.TESTADOR);
         
         double salario = calculadora.calculaSalario(testador);
