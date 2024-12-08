@@ -1,4 +1,4 @@
-package br.dev.paulowolfgang.exemplos.notal_fiscal;
+package br.dev.paulowolfgang.exemplos.nota_fiscal;
 
 /**
  *
