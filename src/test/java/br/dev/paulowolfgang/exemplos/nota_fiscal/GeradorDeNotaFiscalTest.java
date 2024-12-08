@@ -10,7 +10,7 @@ import org.junit.jupiter.api.Assertions;
  */
 public class GeradorDeNotaFiscalTest {
     
-    private GeradorDeNotalFiscal gerador;
+    private GeradorDeNotaFiscal gerador;
     
     @BeforeEach
     public void inicializa()
