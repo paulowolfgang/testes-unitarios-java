@@ -8,12 +8,23 @@ import java.util.Calendar;
  */
 public class GeradorDeNotaFiscal {
     
+    private NfDao dao;
+    
+    public GeradorDeNotaFiscal(NfDao dao)
+    {
+        this.dao = dao;
+    }
+    
     public NotaFiscal gera(Pedido pedido)
     {
-        return new NotaFiscal(
+        NotaFiscal notaFiscal = new NotaFiscal(
                 pedido.getCliente(),
                 pedido.getValorTotal() * 0.94,
                 Calendar.getInstance()
         );
+        
+        dao.persiste(notaFiscal);
+        
+        return notaFiscal;
     }
 }
