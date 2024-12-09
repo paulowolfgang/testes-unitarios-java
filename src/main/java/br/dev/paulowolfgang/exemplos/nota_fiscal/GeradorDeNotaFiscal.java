@@ -9,10 +9,12 @@ import java.util.Calendar;
 public class GeradorDeNotaFiscal {
     
     private NfDao dao;
+    private final Sap sap;
     
-    public GeradorDeNotaFiscal(NfDao dao)
+    public GeradorDeNotaFiscal(NfDao dao, Sap sap)
     {
         this.dao = dao;
+        this.sap = sap;
     }
     
     public NotaFiscal gera(Pedido pedido)
@@ -24,6 +26,7 @@ public class GeradorDeNotaFiscal {
         );
         
         dao.persiste(notaFiscal);
+        sap.envia(notaFiscal);
         
         return notaFiscal;
     }

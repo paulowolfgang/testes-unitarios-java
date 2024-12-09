@@ -15,7 +15,8 @@ public class GeradorDeNotaFiscalTest {
     public void deveGerarNfComValorDeImpostoDescontado()
     {
         NfDao dao = Mockito.mock(NfDao.class);
-        GeradorDeNotaFiscal gerador = new GeradorDeNotaFiscal(dao);
+        Sap sap = Mockito.mock(Sap.class);
+        GeradorDeNotaFiscal gerador = new GeradorDeNotaFiscal(dao, sap);
 
         Pedido pedido = new Pedido("Ana", 1000, 1);
         NotaFiscal notaFiscal = gerador.gera(pedido);
@@ -28,7 +29,8 @@ public class GeradorDeNotaFiscalTest {
     public void devePersistirNfGerada()
     {
         NfDao dao = Mockito.mock(NfDao.class);
-        GeradorDeNotaFiscal gerador = new GeradorDeNotaFiscal(dao);
+        Sap sap = Mockito.mock(Sap.class);
+        GeradorDeNotaFiscal gerador = new GeradorDeNotaFiscal(dao, sap);
         
         Pedido pedido = new Pedido("Maurício", 1000, 1);
         NotaFiscal notaFiscal = gerador.gera(pedido);
@@ -41,10 +43,9 @@ public class GeradorDeNotaFiscalTest {
     {
         NfDao dao = Mockito.mock(NfDao.class);
         Sap sap = Mockito.mock(Sap.class);
+        GeradorDeNotaFiscal gerador = new GeradorDeNotaFiscal(dao, sap);
         
-        GeradorDeNotaFiscal notaFiscal = new GeradorDeNotaFiscal(dao, sap);
-        Pedido pedido = new Pedido("Roberto", 1000, 1);
-        
+        Pedido pedido = new Pedido("Maurício", 1000, 1);
         NotaFiscal notaFiscal = gerador.gera(pedido);
         
         Mockito.verify(sap).envia(notaFiscal);
