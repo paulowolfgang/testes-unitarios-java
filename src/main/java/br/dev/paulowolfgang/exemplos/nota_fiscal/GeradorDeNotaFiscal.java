@@ -1,6 +1,7 @@
 package br.dev.paulowolfgang.exemplos.nota_fiscal;
 
 import java.util.Calendar;
+import java.util.List;
 
 /**
  *
@@ -8,13 +9,11 @@ import java.util.Calendar;
  */
 public class GeradorDeNotaFiscal {
     
-    private NfDao dao;
-    private final Sap sap;
+    private final List<AcaoAposGerarNota> acoes;
     
-    public GeradorDeNotaFiscal(NfDao dao, Sap sap)
+    public GeradorDeNotaFiscal(List<AcaoAposGerarNota> acoes)
     {
-        this.dao = dao;
-        this.sap = sap;
+        this.acoes = acoes;
     }
     
     public NotaFiscal gera(Pedido pedido)
@@ -25,8 +24,10 @@ public class GeradorDeNotaFiscal {
                 Calendar.getInstance()
         );
         
-        dao.persiste(notaFiscal);
-        sap.envia(notaFiscal);
+        for(AcaoAposGerarNota acao: acoes)
+        {
+            acao.executa(notaFiscal);
+        }
         
         return notaFiscal;
     }
