@@ -1,5 +1,7 @@
 package br.dev.paulowolfgang.exemplos.processador_boleto;
 
+import java.util.Arrays;
+import java.util.List;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.Assertions;
 
@@ -13,8 +15,7 @@ public class ProcessadorDeBoletosTest {
     public void deveProcessarPagamentoViaBOletoUnico()
     {
         ProcessadorDeBoletos processador = new ProcessadorDeBoletos();
-        
-        Fatura fatura = new Fatura("Cliente", 150.0);
+        Fatura fatura = new Fatura("Ana", 150.0);
         Boleto boleto01 = new Boleto(150.0);
         
         List<Boleto> boletos = Arrays.asList(boleto01);
