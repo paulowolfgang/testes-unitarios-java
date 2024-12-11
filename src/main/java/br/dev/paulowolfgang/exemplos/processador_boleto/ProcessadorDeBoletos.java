@@ -10,10 +10,12 @@ public class ProcessadorDeBoletos {
     
     public void processa(List<Boleto> boletos, Fatura fatura)
     {
-        for(Boleto boleto: boletos)
+        for(Boleto boleto : boletos)
         {
-            Pagamento pagamento = new Pagamento(boleto.getValor(), FormaDePagamento.BOLETO);
-            fatura.getPagamentos().add(pagamento);
+            Pagamento pagamento = new Pagamento(
+                    boleto.getValor(),
+                    FormaDePagamento.BOLETO);
+            fatura.adicionarPagamento(pagamento);
         }
     }
 }

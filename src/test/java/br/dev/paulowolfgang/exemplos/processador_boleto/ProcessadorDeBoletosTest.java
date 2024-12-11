@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.List;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.Assertions;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 /**
  *
@@ -41,5 +42,19 @@ public class ProcessadorDeBoletosTest {
         Assertions.assertEquals(2, fatura.getPagamentos().size());
         Assertions.assertEquals(100.0, fatura.getPagamentos().get(0).getValor());
         Assertions.assertEquals(200.0, fatura.getPagamentos().get(1).getValor());
+    }
+    
+    @Test
+    public void deveMarcarFaturaComoPagaCasoOBoletoUnicoPagueTudo()
+    {
+        ProcessadorDeBoletos processador = new ProcessadorDeBoletos();
+        
+        Fatura fatura = new Fatura("José", 150.0);
+        Boleto boleto = new Boleto(150.0);
+        List<Boleto> boletos = Arrays.asList(boleto);
+        
+        processador.processa(boletos, fatura);
+        
+        assertTrue(fatura.isPago());
     }
 }
